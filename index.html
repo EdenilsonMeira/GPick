@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>GPick Game</title>
+  <h1 style="font-size: 3.5rem;">Guitar Pick Game</h1>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- FontAwesome icon -->
+  <script src="https://kit.fontawesome.com/07ab13fdb5.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Fluid container takes up the whole width of the screen -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col" style="background-color: #393e46; padding: 3%;">
+        <center><img class="closed-img" src="images/closed.png" alt="closed-fret">
+          <img id="blackSpot-img" src="images/blackSpot.png" alt=" blackSpot">
+      </div>
+    </div>
+
+    <!-- Play Button -->
+    <div class="row">
+      <div class="col">
+        <center><button type="button" class="btn btn-outline-dark btn-lg Play-button" onclick="actionPlay();"><i class="fas fa-music"></i> Play</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Play Counter, Select Note and Score Section -->
+
+  <section class="note-selection-section" id="features">
+    <center>
+      <div class="row">
+        <div class="feature-box col-lg-4">
+
+          <!-- Play Counter -->
+          <i class="icon fas fa-check-circle fa-4x" onclick="resetPlay();"></i>
+          <h3 id="feature-title-PC">Play Counter</h3>
+          <p style="font-size: 1rem;">Click on the icon to reset play.</p>
+          <!-- Auto Play -->
+          <input type="checkbox" id="AutoPlay_chkbox" name="AutoPlay" style="margin-top: 24%;">
+          <label for="AutoPlay">Auto Play</label>
+        </div>
+
+        <!-- Select Note -->
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-bullseye fa-4x" onclick="resetGame();"></i>
+          <h3 class="feature-title">Select Note</h3>
+
+          <div class="container-fluid">
+            <!-- First set of notes -->
+            <div class="first6notes" style="font-size:25px;">
+              <input type="radio" name="note" id="1" value="A" onclick="checkResults();"><label for="A">A</label>
+              <input type="radio" name="note" id="2" value="A#" onclick="checkResults();"><label for="A#">A#</label>
+              <input type="radio" name="note" id="3" value="B" onclick="checkResults();"><label for="B">B</label>
+              <input type="radio" name="note" id="4" value="C" onclick="checkResults();"><label for="C">C</label>
+              <input type="radio" name="note" id="5" value="C#" onclick="checkResults();"><label for="C#">C#</label>
+              <input type="radio" name="note" id="6" value="D" onclick="checkResults();"><label for="D">D</label>
+            </div>
+            <!-- Second set of notes -->
+            <div class="second6notes" style="font-size:25px;">
+              <input type="radio" name="note" id="7" value="D#" onclick="checkResults();"><label for="D#">D#</label>
+              <input type="radio" name="note" id="8" value="E" onclick="checkResults();"><label for="E">E</label>
+              <input type="radio" name="note" id="9" value="F" onclick="checkResults();"><label for="F">F</label>
+              <input type="radio" name="note" id="10" value="F#" onclick="checkResults();"><label for="F#">F#</label>
+              <input type="radio" name="note" id="11" value="G" onclick="checkResults();"><label for="G">G</label>
+              <input type="radio" name="note" id="12" value="G#" onclick="checkResults();"><label for="G#">G#</label>
+            </div>
+            <!-- Open Cords Checkbox -->
+            <input type="checkbox" name="openCords" style="margin-top: 2%;" onclick="openCordsBox();">
+            <label for="openCords">Open Cords</label>
+          </div>
+        </div>
+        <!-- Score Counter -->
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-music fa-4x" onclick="resetScore();"></i>
+          <h3 id="feature-title-SC">Score</h3>
+          <p style="font-size: 1rem;">Counts your score</p>
+          <!-- Cheat Sheet -->
+          <input type="checkbox" name="cheatSheet" style="margin-top:24%;" onclick="cheatSheetBox();">
+          <label for="cheatSheet">Cheat Sheet</label>
+        </div>
+      </div>
+  </section>
+
+  <script src="js/index.js" charset="utf-8"></script>
+
+</body>
+
+<!-- Footer -->
+
+<footer>
+  <div class="container-fluid">
+    <div class="row" style="background-color: #393e46;">
+      <div class="col-lg-4">
+        <div class="guitarPick-img">
+          <img class="gpick-img" src="images/GPick_sm.png" alt="GPick-logo">
+          <h6 style="font-size: 10px; margin-left:10px; color:white;"> &copy; Copyright/2020 - All rights reserved - www.eddiedemeira.com</h6>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="social-icons">
+          <center>
+            <a href="https://twitter.com/eddiedemeira"><i class="social-icons fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/eddie.demeira/"><i class="social-icons fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/eddiedemeira/"><i class="social-icons fab fa-instagram"></i></a>
+            <a href="mailto:eddie@eddiedemeira.com"><i class="social-icons fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="instructions">
+          <center>
+            <p style="font-size: 1rem; color: white; margin-top: 40%;"><a href="https://www.eddiedemeira.com"> click here for instructions.</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>

@@ -1,0 +1,80 @@
+body {
+  background-color: #393e46;
+}
+
+h1 {
+  color: #0e9aa7;
+  position: relative;
+  text-align: center;
+  font-family: "Lobster";
+  font-size: 5rem;
+  padding: 3%;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 25px;
+}
+
+#features {
+  position: relative;
+  z-index: 1;
+  font-size: auto;
+}
+
+#blackSpot-img {
+  position: absolute;
+  height: 200px;
+  padding-right: 40px;
+  visibility: hidden;
+}
+
+.container-fluid {
+  padding: 2% 15%;
+}
+
+.checkboxes-feat {
+  color: white;
+  position: relative;
+  padding-left: 50px;
+  margin-top: 5%;
+}
+
+.Play-button {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.closed-img {
+  position: relative;
+  height: 200px;
+  width: stretch;
+}
+
+.first6notes {
+  padding: 10px 40px;
+}
+
+.second6notes {
+  padding: 10px;
+}
+
+.guitarPick-img {
+  position: relative;
+  width: auto;
+  margin-left: 10px;
+  margin-top: 25%;
+}
+
+.social-icons {
+  position: relative;
+  padding: 20px;
+  margin-top: 15%;
+}
+
+.icon:hover {
+  color: #ef8172;
+}
